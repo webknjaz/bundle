@@ -7,7 +7,7 @@ from shutil import rmtree
 from tempfile import mkdtemp
 from textwrap import TextWrapper
 
-plain = frozenset("-.=" + string.letters + string.digits)
+plain = frozenset("-.=" + string.letters if sys.version_info < (3,0) else string.ascii_letters + string.digits)
 
 
 def say(m):
